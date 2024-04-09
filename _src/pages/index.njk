@@ -1,0 +1,26 @@
+{% set page_title = "首頁" %}
+{% extends "_layout.njk" %}
+
+{% block content %}
+    <!-- =========================================================================-->
+    <!-- 頁面內容  START-->
+    <!-- =========================================================================-->
+    <main class="page_main">
+        {% set section_name = "banner" %}
+        <section class="page_section-{{section_name}}">
+            {% include "home/" + section_name + ".njk" %}
+        </section>
+
+        {% set section_name = "portfolio" %}
+        <section class="page_section-{{section_name}}">
+            {% include "home/" + section_name + ".njk" %}
+        </section>
+
+
+    </main>
+
+    <!-- /.page_main END  !! -->
+    <!-- =========================================================================-->
+    <!-- 頁面內容  END  !!-->
+    <!-- =========================================================================-->
+{% endblock %}

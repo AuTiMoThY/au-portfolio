@@ -1,0 +1,90 @@
+:root {
+    --portfolio-img-row: 4;
+    --portfolio-img-column: 7; 
+}
+
+.portfolio-grid {
+    // display: grid;
+    // --grid-gutter: #{responsive-clamp(104, 16)};
+    // --cell-max-width: calc(100% / 24);
+    // --inset-padding: 0vw;
+    // --row-height-scaling-factor: 0.0178;
+    // --container-width: calc(100% - #{responsive-clamp(104 * 2, 16 * 2)});
+    // grid-template-rows: repeat(21, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+    // grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(24, minmax(0, var(--cell-max-width))) minmax(var(--grid-gutter), 1fr);
+
+    display: grid;
+    --cell-max-width: calc(100vw / 26);
+    --row-height-scaling-factor: 1;
+    grid-template-columns: repeat(26, minmax(0, var(--cell-max-width)));
+    grid-template-rows: repeat(9, minmax(calc(var(--cell-max-width) * var(--row-height-scaling-factor)), auto));
+}
+
+.portfolio-item:nth-of-type(1) {
+    grid-area: 1 / 1 / 5 / 4;
+
+    img {
+        left: unset;
+        right: 0;
+        translate: 0 -50%;
+    }
+}
+
+.portfolio-item:nth-of-type(2) {
+    grid-area: 1 / 5 / span var(--portfolio-img-row) / span var(--portfolio-img-column);
+}
+
+.portfolio-item:nth-of-type(3) {
+    grid-area: 1 / 13 / span var(--portfolio-img-row) / span var(--portfolio-img-column);
+}
+
+.portfolio-item:nth-of-type(4) {
+    grid-area: 1 / 21 / span var(--portfolio-img-row) / span var(--portfolio-img-column);
+
+    img {
+        left: 0;
+        translate: 0 -50%;
+    }
+}
+
+.portfolio-item:nth-of-type(5) {
+    grid-area: 6 / 1 / span var(--portfolio-img-row) / 7;
+
+    img {
+        left: unset;
+        right: 0;
+        translate: 0 -50%;
+    }
+}
+
+.portfolio-item:nth-of-type(6) {
+    grid-area: 6 / 8 / span var(--portfolio-img-row) / span var(--portfolio-img-column);
+}
+
+.portfolio-item:nth-of-type(7) {
+    grid-area: 6 / 16 / span var(--portfolio-img-row) / span var(--portfolio-img-column);
+}
+
+.portfolio-item:nth-of-type(8) {
+    grid-area: 6 / 24 / span var(--portfolio-img-row) / span var(--portfolio-img-column);
+}
+
+.portfolio-item {
+    > .inner {
+        display: block;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+    }
+    img {
+        width: calc(var(--cell-max-width) * var(--portfolio-img-column));
+        @include absolute(50%, $L:50%);
+        translate: -50% -50%;
+        aspect-ratio: 16 / 9;
+
+        height: 100%;
+        object-fit: cover;
+
+        border-radius: 16px;
+    }
+}

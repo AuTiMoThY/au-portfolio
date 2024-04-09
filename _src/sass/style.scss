@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* *****************************************/
+/*    css
+/*    V #{VERSION}
+/*        by AuOzzy
+/******************************************/
+@use "sass:math";
+@import "core";
+
+@keyframes enlarge {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        width: calc(100% + 30px);
+        height: calc(100% + 30px);
+    }
+}
+
+// ********** COMPONENT START ********** //
+// @import "generate/components/btns";
+// @import "generate/components/gotop";
+// @import "generate/components/popup";
+// @import "generate/components/notification";
+// @import "generate/components/dialog";
+// @import "generate/components/form/frm_set";
+// @import "generate/components/form/input";
+// @import "generate/components/form/field";
+
+// ********** LAYOUT START ********** //
+@import "generate/layout/header";
+@import "generate/layout/footer";
+@import "generate/layout/container";
+
+
+// ********** frontend START ********** //
+
+@import "frontend/banner";
+@import "frontend/page_section";
+@import "frontend/home/portfolio";

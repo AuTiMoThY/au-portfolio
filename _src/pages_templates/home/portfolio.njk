@@ -1,0 +1,56 @@
+<div class="container">
+    <h2 class="page_section-title">客戶案例</h2>
+</div>
+<ul class="portfolio-grid">
+    {%
+        set portfolioList = [
+            {
+                'name': 'firestar',
+                'title': 'Firestar運動服飾-官網',
+                'img': 'firestar.jpg'
+            },
+            {
+                'name': 'canael-style',
+                'title': 'Canael Style-產品介紹頁',
+                'img': 'canael-style.jpg'
+            },
+            {
+                'name': '38org',
+                'title': '現代婦女基金會-活動頁',
+                'img': '38org.jpg'
+            },
+            {
+                'name': 'yuan',
+                'title': '元式生活-問卷頁',
+                'img': 'yuan.jpg'
+            },
+            {
+                'name': 'memopad',
+                'title': '彙盈企業便利貼-官網',
+                'img': 'memopad.jpg'
+            },
+            {
+                'name': 'green-furniture',
+                'title': '綠的傢俱-官網',
+                'img': 'green-furniture.jpg'
+            },
+            {
+                'name': 'ecmd',
+                'title': '鼎豐整合行銷-官網',
+                'img': 'ecmd.jpg'
+            },
+            {
+                'name': 'pattern-go',
+                'title': '衣服打版管理介面 佛印山心藥系統-管理介面',
+                'img': 'pattern-go.jpg'
+            }
+        ]
+    %}
+    {% for item in portfolioList -%}
+    <li class="portfolio-item">
+        <a class="inner" href="/portfolio/{{item.name}}.html">
+            <img src="assets/images/portfolio-cover/{{item.img}}" alt="">
+        </a>
+    </li>
+    {%- endfor %}
+</ul>

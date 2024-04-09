@@ -1,0 +1,89 @@
+.page_section-banner {
+    width: 100%;
+    height: 100vh;
+    @include linear-gradient(to bottom, #FFA6CE 0%, #FFC8DD 45%, #FFF6F9 100%);
+
+    .container {
+        display: flex;
+        gap: 104px;
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .banner-block {
+        flex: set-flex-basis(104, 2);
+
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        
+        &.slogan {
+            gap: 40px;
+        }
+    }
+
+    .title {
+        @extend .txt-drop-shadow;
+        @extend .font-title-L;
+    }
+
+    .advantage {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @extend .font-title-M;
+
+        .txt {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 16px;
+            &::before {
+                content: '';
+                display: block;
+                width: 25px;
+                height: 25px;
+                background-image: url(../images/icon-star.svg);
+                flex: 0 0 auto;
+            }
+        }
+    }
+
+    .counter-list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .counter-item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .label {
+            order: 2;
+        }
+
+        .txt {
+            order: 1;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 8px;
+        }
+
+        .number {
+            @extend .txt-drop-shadow;
+            @extend .font-slogan;
+        }
+    }
+
+    .logo {
+        @include absolute(50%, $L:50%);
+        translate: -50% -50%;
+        opacity: 0.1;
+    }
+}

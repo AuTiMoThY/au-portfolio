@@ -1,0 +1,11 @@
+.page_section {
+    &-title {
+        @extend .txt-drop-shadow;
+        @extend .font-title-M;
+        color: var(--pri_02);
+    }
+
+    &-portfolio {
+        background-color: var(--pri_00);
+    }
+}
